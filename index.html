@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manapad Energy Hub</title>
+<meta name="description" content="Non-technical overview: electric fishing boats and a shore energy hub, piloted with three boats at Manapad, Tamil Nadu.">
+<link rel="stylesheet" href="styles/fonts.css">
+<link rel="stylesheet" href="styles/deck.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- FRP fishing boat, side view, stern (outboard) on the left -->
+    <symbol id="boat" viewBox="0 0 240 90">
+      <path d="M26,40 L228,28 L214,58 Q130,78 44,70 Z" fill="var(--hull,#2f7fb5)"/>
+      <path d="M26,40 L228,28 L225,35 L28,47 Z" fill="#fff" opacity=".9"/>
+      <path d="M44,70 Q130,78 214,58 L210,64 Q130,82 50,74 Z" fill="var(--keel,#e2603f)"/>
+      <rect x="4" y="14" width="26" height="22" rx="6" fill="var(--motor,#33414a)"/>
+      <rect x="13" y="36" width="8" height="38" fill="var(--motor,#33414a)"/>
+      <path d="M6,72 h22 l-4,8 h-14z" fill="var(--motor,#33414a)"/>
+    </symbol>
+    <symbol id="bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="24" r="9"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></g></symbol>
+    <symbol id="i-battery" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><rect x="6" y="13" width="32" height="22" rx="4"/><path d="M38 20h4v8h-4"/></g><path d="M23 16l-7 10h6l-1 6 7-10h-6z" fill="currentColor"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6v9M31 6v9M12 15h24v7a12 12 0 0 1-24 0z"/><path d="M24 34v8"/></g></symbol>
+    <symbol id="i-boat" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24h36l-5 9H11z"/><path d="M14 24V13l12 11"/><path d="M4 40c4 3 8 3 11 0 3 3 7 3 10 0 3 3 7 3 10 0 3 3 6 3 9 0"/></g></symbol>
+    <symbol id="i-rupee" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9h22M14 17h22M20 9c10 0 10 16 0 16h-6l16 16"/></g></symbol>
+    <symbol id="i-smoke" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 34a7 7 0 0 1 1-14 10 10 0 0 1 19-2 8 8 0 0 1 4 16z"/><path d="M14 42h4M24 42h4M34 42h4"/></g></symbol>
+    <symbol id="i-sound" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 19h7l10-8v26l-10-8H8z"/><path d="M32 18a8 8 0 0 1 0 12M36 13a14 14 0 0 1 0 22"/></g></symbol>
+    <symbol id="i-pull" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="24" r="9"/><path d="M25 24h14M39 18v12"/></g></symbol>
+    <symbol id="i-fish" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24c8-10 22-12 32 0-10 12-24 10-32 0z"/><path d="M38 24l6-6v12z"/></g><circle cx="15" cy="22" r="2" fill="currentColor"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="28" height="34" rx="3"/><path d="M18 8V5h12v3M16 20h16M16 27h16M16 34h10"/></g></symbol>
+    <symbol id="i-ear" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h32v20H22l-8 7v-7H8z"/><path d="M16 20h16M16 25h10"/></g></symbol>
+    <symbol id="i-tool" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M29 8a9 9 0 0 0-10 12L8 31l9 9 11-11a9 9 0 0 0 12-10l-6 6-6-6z"/></g></symbol>
+    <symbol id="i-people" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="15" r="6"/><circle cx="33" cy="17" r="5"/><path d="M5 40c0-8 5-13 12-13s12 5 12 13M29 28c7 0 13 4 13 12"/></g></symbol>
+    <symbol id="i-gov" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17 24 7l18 10zM10 21v15M19 21v15M29 21v15M38 21v15M6 40h36"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38C8 20 20 8 40 8c0 20-12 32-30 30z"/><path d="M10 38 28 20"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M24 44S10 30 10 19a14 14 0 0 1 28 0c0 11-14 25-14 25z"/><circle cx="24" cy="19" r="5"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 48 48"><path d="M10 25l9 9 19-20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 30 40"><path d="M15 2C15 2 3 18 3 26a12 12 0 0 0 24 0C27 18 15 2 15 2z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<div class="deck" id="deck">
+<main class="stage" id="stage">
+
+<!-- 1 · TITLE -->
+<section class="slide photo" data-title="Title" style="background-image:url(assets/coast-beach-boat.jpg)">
+  <div class="shade"></div>
+  <div class="title-wrap">
+    <p class="kicker r">Manapad pilot · Thoothukudi District · Tamil Nadu</p>
+    <h1 class="r" style="--d:1">Fish at sea.<br><span class="volt">Charge on shore.</span></h1>
+    <p class="lede r" style="--d:2">Electric power for Tamil Nadu’s fishing boats, starting with three boats at Manapad.</p>
+    <p class="tamil r" style="--d:3">மீனவர் எரிசக்தி மையம் <span>· Fishermen Energy Hub</span></p>
+  </div>
+  <div class="brand r" style="--d:4"><img src="assets/simtestlab-logo.png" alt="">Simtestlab</div>
+  <p class="photo-note">Illustrative photo · Tamil Nadu coast</p>
+</section>
+
+<!-- 2 · A DAY AT SEA -->
+<section class="slide" data-title="A day at sea">
+  <p class="kicker r">01 · A fisherman’s day</p>
+  <h2 class="r" style="--d:1">The engine runs for only <em>about 3 hours</em> a day</h2>
+  <p class="lede r" style="--d:2">Head out, fish with the engine off, head back. The rest of the day the boat rests on shore, which leaves plenty of time to recharge a battery.</p>
+  <div class="day r" style="--d:3">
+    <div class="day-track">
+      <div class="seg on" style="flex:1.5"><b>Travel out</b><span>≈ 1.5 h · engine on</span></div>
+      <div class="seg off" style="flex:5"><b>Fishing</b><span>≈ 5 h · engine off</span></div>
+      <div class="seg on" style="flex:1.5"><b>Travel back</b><span>≈ 1.5 h · engine on</span></div>
+    </div>
+    <svg class="day-boat" viewBox="0 0 240 90"><use href="#boat"/></svg>
+    <div class="day-waves"></div>
+  </div>
+  <div class="stats3">
+    <div class="stat r" style="--d:4"><svg class="ico amb"><use href="#i-boat"/></svg><b>3 h</b><span>engine running per trip</span></div>
+    <div class="stat r" style="--d:5"><svg class="ico sea"><use href="#i-fish"/></svg><b>5 h</b><span>engine off while the nets work</span></div>
+    <div class="stat r" style="--d:6"><svg class="ico volt"><use href="#i-plug"/></svg><b>≈ 14 h</b><span>ashore: free time to charge</span></div>
+  </div>
+  <p class="foot r" style="--d:7">Based on what fishermen told us during field visits. The pilot will record real trip times.</p>
+</section>
+
+<!-- 3 · THE PROBLEM -->
+<section class="slide sand" data-title="The problem">
+  <p class="kicker r">02 · The problem today</p>
+  <h2 class="r" style="--d:1">Kerosene engines are <em class="amb">costly, dirty and wasteful</em></h2>
+  <div class="split">
+    <div class="drops-card r" style="--d:2">
+      <div class="drops" id="drops"></div>
+      <p class="big-line">Of every <b>8 litres</b> burned, only about <b class="volt-t">1</b> actually pushes the boat.</p>
+      <p class="small">The rest is lost as heat, noise and smoke.</p>
+    </div>
+    <div class="pains">
+      <div class="pain r" style="--d:3"><svg class="ico amb"><use href="#i-rupee"/></svg><div><b>≈ ₹950 every trip</b><span>on kerosene, petrol and oil for one engine</span></div></div>
+      <div class="pain r" style="--d:4"><svg class="ico amb"><use href="#i-smoke"/></svg><div><b>Oily exhaust</b><span>goes straight into the water the fish live in</span></div></div>
+      <div class="pain r" style="--d:5"><svg class="ico amb"><use href="#i-sound"/></svg><div><b>Loud, all trip</b><span>noise and fumes for the crew, hour after hour</span></div></div>
+      <div class="pain r" style="--d:6"><svg class="ico amb"><use href="#i-pull"/></svg><div><b>Hard to start</b><span>pull-start on petrol, then switch to kerosene</span></div></div>
+    </div>
+  </div>
+  <p class="foot r" style="--d:7">Estimates from field interviews and our engineering study of the 9.9 hp kerosene outboard used on local boats. The pilot will measure them.</p>
+</section>
+
+<!-- 4 · THE IDEA -->
+<section class="slide" data-title="The idea">
+  <p class="kicker r">03 · The idea</p>
+  <h2 class="r" style="--d:1">Same boat. Same tiller. <em>A new electric engine.</em></h2>
+  <div class="swap">
+    <figure class="card r" style="--d:2">
+      <div class="tag amb-bg">Today</div>
+      <div class="pic"><img src="assets/kerosene-outboard.jpg" alt="Kerosene outboard engine"></div>
+      <figcaption>Kerosene outboard engine</figcaption>
+    </figure>
+    <div class="arrow r" style="--d:3"><svg viewBox="0 0 80 40"><path d="M4 20h64M54 8l14 12-14 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <figure class="card r" style="--d:4">
+      <div class="tag volt-bg">Tomorrow</div>
+      <div class="pic"><img src="assets/electric-outboards.jpg" alt="Electric outboard motors"></div>
+      <figcaption>Electric outboard + battery</figcaption>
+    </figure>
+    <div class="cmp r" style="--d:5">
+      <div class="row hd"><span></span><span>Today</span><span>Electric</span></div>
+      <div class="row"><span>Starting</span><span>Pull cord</span><span class="g">Switch on</span></div>
+      <div class="row"><span>Sound</span><span>Loud</span><span class="g">Near silent</span></div>
+      <div class="row"><span>Exhaust</span><span>Oily smoke</span><span class="g">None</span></div>
+      <div class="row"><span>Upkeep</span><span>Plugs, carburettor, oil mixing</span><span class="g">Propeller and seals</span></div>
+      <p class="safe"><svg class="ico-s"><use href="#i-check"/></svg>The battery sits low in the middle of the boat. The second engine already on board stays as a backup to get home.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · HOW IT WORKS -->
+<section class="slide deep" data-title="How it works">
+  <p class="kicker r">04 · How it works</p>
+  <h2 class="r" style="--d:1">From sunshine to sea in <em>four simple steps</em></h2>
+  <div class="flow">
+    <svg class="flow-line" viewBox="0 0 1400 20" preserveAspectRatio="none"><line x1="140" y1="10" x2="1260" y2="10"/><line class="dots" x1="140" y1="10" x2="1260" y2="10"/></svg>
+    <div class="step r" style="--d:2"><div class="bubble sun"><svg><use href="#i-sun"/></svg></div><b>1 · Capture</b><span>Solar panels on shore turn sunlight into electricity.</span></div>
+    <div class="step r" style="--d:3"><div class="bubble sea"><svg><use href="#i-battery"/></svg></div><b>2 · Store</b><span>A shared battery bank saves it, so boats can charge day or night.</span></div>
+    <div class="step r" style="--d:4"><div class="bubble volt"><svg><use href="#i-plug"/></svg></div><b>3 · Charge</b><span>Boat batteries are topped up at the landing while the crew rests.</span></div>
+    <div class="step r" style="--d:5"><div class="bubble surf"><svg><use href="#i-boat"/></svg></div><b>4 · Sail</b><span>The electric motor takes the boat out to fish, quiet and smoke-free.</span></div>
+  </div>
+  <p class="note r" style="--d:6"><b>Pilot first, hub later.</b> During the pilot the boats can charge from the ordinary power supply. The solar energy hub is the next step once the boats have proved themselves.</p>
+</section>
+
+<!-- 6 · WHERE -->
+<section class="slide" data-title="Manapad">
+  <p class="kicker r">05 · Where we start</p>
+  <h2 class="r" style="--d:1">Manapad: our <em>pilot village</em></h2>
+  <div class="where">
+    <div class="where-side">
+      <svg class="tn r" id="tn-small" viewBox="-20 -20 520 680" style="--d:2"></svg>
+      <p class="r" style="--d:3">A fishing village on the Gulf of Mannar coast in Thoothukudi District, with a busy fleet of fibreglass boats.</p>
+      <ul class="legend r" style="--d:4">
+        <li><i class="lg-sun"></i>Possible solar and battery area</li>
+        <li><i class="lg-jetty"></i>Boat jetty with charging points</li>
+        <li><i class="lg-route"></i>Boats’ way out to sea</li>
+      </ul>
+    </div>
+    <div class="map r" style="--d:2">
+      <svg id="site" viewBox="850 372 680 476" preserveAspectRatio="xMidYMid slice">
+        <image href="assets/manapad-satellite.jpg" x="215" y="62" width="1421" height="820" preserveAspectRatio="none"/>
+        <g id="site-layers"></g>
+      </svg>
+      <span class="concept">Concept sketch · not surveyed</span>
+      <span class="credit">Imagery ©2026 Airbus, Maxar Technologies · Map data ©2026 Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · THE PILOT -->
+<section class="slide sand" data-title="Three boats">
+  <p class="kicker r">06 · The pilot</p>
+  <h2 class="r" style="--d:1">Three boats. Three set-ups. <em>Real fishing.</em></h2>
+  <p class="lede r" style="--d:2">Each boat tries a different combination side by side in real sea conditions, so we learn what works best before going bigger.</p>
+  <div class="boats3">
+    <div class="bcard r" style="--d:3;--hull:#2f7fb5">
+      <div class="bnum">Boat 1</div>
+      <svg class="bimg" viewBox="0 0 240 90" style="--motor:#0e8a5f"><use href="#boat"/></svg>
+      <b>Swappable packs</b>
+      <span>Light battery packs that are lifted off, charged ashore and swapped in the morning.</span>
+    </div>
+    <div class="bcard r" style="--d:4;--hull:#d9822b">
+      <div class="bnum">Boat 2</div>
+      <svg class="bimg" viewBox="0 0 240 90" style="--motor:#0e8a5f"><use href="#boat"/></svg>
+      <b>Extra power</b>
+      <span>A larger motor with spare strength for heavy catch days and rough seas.</span>
+    </div>
+    <div class="bcard r" style="--d:5;--hull:#7a4fb0">
+      <div class="bnum">Boat 3</div>
+      <svg class="bimg" viewBox="0 0 240 90" style="--motor:#0e8a5f"><use href="#boat"/></svg>
+      <b>Plug-in charging</b>
+      <span>The battery stays on board and is charged by plugging in at the landing.</span>
+    </div>
+  </div>
+  <div class="compare r" style="--d:6"><b>We compare:</b><span>Range</span><span>Ease of use</span><span>Charging time</span><span>Running cost</span><span>Reliability at sea</span></div>
+  <p class="foot r" style="--d:7">Set-ups shown are examples of what we will compare. The final three are chosen after measuring the boats.</p>
+</section>
+
+<!-- 8 · LEARN TOGETHER -->
+<section class="slide" data-title="Feedback loop">
+  <p class="kicker r">07 · Learn together</p>
+  <h2 class="r" style="--d:1">Fishermen test it. <em>Fishermen shape it.</em></h2>
+  <div class="loopwrap">
+    <div class="loop r" style="--d:2">
+      <svg class="ring" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150"/><circle class="spin" cx="200" cy="200" r="150"/></svg>
+      <div class="hub-txt"><b>Better</b><span>every week</span></div>
+      <div class="node n1"><svg><use href="#i-boat"/></svg><b>Go fishing</b><span>normal trips, normal crews</span></div>
+      <div class="node n2"><svg><use href="#i-clip"/></svg><b>Record</b><span>every trip logged automatically</span></div>
+      <div class="node n3"><svg><use href="#i-ear"/></svg><b>Listen</b><span>weekly talks with the crews</span></div>
+      <div class="node n4"><svg><use href="#i-tool"/></svg><b>Improve</b><span>fix it and try again</span></div>
+    </div>
+    <div class="who">
+      <p class="who-h r" style="--d:3">Whose feedback counts</p>
+      <ul>
+        <li class="r" style="--d:4"><svg><use href="#i-people"/></svg>Fishermen and boat crews</li>
+        <li class="r" style="--d:5"><svg><use href="#i-tool"/></svg>Boat owners and local boat builders</li>
+        <li class="r" style="--d:6"><svg><use href="#i-fish"/></svg>Fisheries College experts</li>
+        <li class="r" style="--d:7"><svg><use href="#i-gov"/></svg>Government departments</li>
+      </ul>
+      <blockquote class="r" style="--d:8">If the fishermen don’t like it, it doesn’t pass. Their verdict decides the test.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · TIMELINE -->
+<section class="slide deep" data-title="Four months">
+  <p class="kicker r">08 · Timeline</p>
+  <h2 class="r" style="--d:1">From first boat to rollout in <em>four months</em></h2>
+  <div class="road">
+    <div class="road-line r" style="--d:2"><i></i><svg class="road-boat" viewBox="0 0 240 90" style="--hull:#4fb3c9;--motor:#38cfa0"><use href="#boat"/></svg></div>
+    <div class="mo r" style="--d:3"><em>Month 1</em><b>Prepare</b><span>Measure the boats, choose the three set-ups, fit motors and batteries.</span></div>
+    <div class="mo r" style="--d:4"><em>Month 2</em><b>Test at sea</b><span>Three boats go fishing as usual. Every trip is recorded.</span></div>
+    <div class="mo r" style="--d:5"><em>Month 3</em><b>Listen and refine</b><span>Gather feedback, fix what doesn’t work, improve the design.</span></div>
+    <div class="mo r last" style="--d:6"><em>Month 4</em><b>Ready to roll out</b><span>A refined solution, proven at Manapad, ready for more boats.</span></div>
+  </div>
+  <p class="note r" style="--d:7"><b>No lost fishing days.</b> Crews keep fishing as normal throughout the pilot, and the boat’s second engine stays on board as a backup.</p>
+</section>
+
+<!-- 10 · WHAT CHANGES -->
+<section class="slide" data-title="Every trip">
+  <p class="kicker r">09 · What changes</p>
+  <h2 class="r" style="--d:1">Every trip: <em>cheaper, cleaner, quieter</em></h2>
+  <div class="bars">
+    <div class="bar-group r" style="--d:2">
+      <p class="bg-h"><svg class="ico-s"><use href="#i-rupee"/></svg>Running cost per trip</p>
+      <div class="bar"><span class="lbl">Kerosene engine</span><div class="fill amb-bg" style="--w:100%"></div><b>≈ ₹950</b></div>
+      <div class="bar"><span class="lbl">Electric motor</span><div class="fill volt-bg" style="--w:16.3%"></div><b>≈ ₹155</b></div>
+    </div>
+    <div class="bar-group r" style="--d:3">
+      <p class="bg-h"><svg class="ico-s"><use href="#i-smoke"/></svg>Carbon dioxide (CO₂) per trip</p>
+      <div class="bar"><span class="lbl">Kerosene engine</span><div class="fill amb-bg" style="--w:100%"></div><b>≈ 32 kg</b></div>
+      <div class="bar"><span class="lbl">Electric motor</span><div class="fill volt-bg" style="--w:43.8%"></div><b>≈ 14 kg</b></div>
+    </div>
+  </div>
+  <div class="stats3 wide">
+    <div class="stat r" style="--d:4"><b class="volt-t">≈ ₹800</b><span>saved on running cost, every trip</span></div>
+    <div class="stat r" style="--d:5"><b class="volt-t">0</b><span>oily exhaust in the water</span></div>
+    <div class="stat r" style="--d:6"><b class="volt-t">≈ 6×</b><span>less energy for the same trip</span></div>
+  </div>
+  <p class="foot r" style="--d:7">Estimates for one 9.9 hp engine replaced, about 3 hours of running per trip, electricity at ₹8 per unit. CO₂ for the electric motor counts today’s grid power; solar charging lowers it further. The pilot replaces every estimate with measured data.</p>
+</section>
+
+<!-- 11 · WHO BENEFITS -->
+<section class="slide sand" data-title="Who benefits">
+  <p class="kicker r">10 · Who benefits</p>
+  <h2 class="r" style="--d:1">Good for fishermen, government <em>and the sea</em></h2>
+  <div class="who3">
+    <div class="wcard r" style="--d:2;--c:var(--sea)">
+      <div class="wico"><svg><use href="#i-people"/></svg></div>
+      <h3>Fishermen</h3>
+      <ul><li>Easier everyday fishing operations</li><li>Practical savings on fuel costs</li><li>A more sustainable livelihood</li></ul>
+    </div>
+    <div class="wcard r" style="--d:3;--c:var(--amb)">
+      <div class="wico"><svg><use href="#i-gov"/></svg></div>
+      <h3>Government</h3>
+      <ul><li>A tested model that can scale</li><li>Supports sustainable fisheries and coastal development</li><li>Evidence for future policy</li></ul>
+    </div>
+    <div class="wcard r" style="--d:4;--c:var(--volt)">
+      <div class="wico"><svg><use href="#i-leaf"/></svg></div>
+      <h3>Environment</h3>
+      <ul><li>Less dependence on fuel-powered engines</li><li>No oily exhaust in coastal waters</li><li>Cleaner, more responsible fishing</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · ON THE GROUND -->
+<section class="slide" data-title="Field visits">
+  <p class="kicker r">11 · On the ground</p>
+  <h2 class="r" style="--d:1">Built with the people <em>who know the sea</em></h2>
+  <p class="lede r" style="--d:2">Field visits with Dr. Kalaiyarasan and the Fisheries College team shaped this plan from the start.</p>
+  <div class="gallery">
+    <figure class="r wide" style="--d:3"><img src="assets/field-jetty.jpg" alt="" style="object-position:center 55%"><figcaption>Simtestlab and Dr. Kalaiyarasan at the jetty</figcaption></figure>
+    <figure class="r" style="--d:4"><img src="assets/field-beach.jpg" alt="" style="object-position:center 46%"><figcaption>Site discussion on the beach</figcaption></figure>
+    <figure class="r" style="--d:5"><img src="assets/field-notes.jpg" alt="" style="object-position:center 50%"><figcaption>Field notes with the team</figcaption></figure>
+    <figure class="r" style="--d:6"><img src="assets/field-discussion.jpg" alt="" style="object-position:center 70%"><figcaption>Discussion with Dr. Kalaiyarasan</figcaption></figure>
+  </div>
+</section>
+
+<!-- 13 · VISION -->
+<section class="slide deep" data-title="Vision">
+  <p class="kicker r">12 · The bigger picture</p>
+  <h2 class="r" style="--d:1">Start at Manapad. <em>Grow across Tamil Nadu. Then India.</em></h2>
+  <div class="vision">
+    <ol class="stairs">
+      <li class="r" style="--d:2"><i>1</i><div><b>Manapad</b><span>Prove it with three boats and real fishermen.</span></div></li>
+      <li class="r" style="--d:3"><i>2</i><div><b>Tamil Nadu</b><span>Adapt the model to fishing villages along the state’s coast.</span></div></li>
+      <li class="r" style="--d:4"><i>3</i><div><b>India</b><span>A model that fishing communities across the country can adopt.</span></div></li>
+      <li class="pillars r" style="--d:5"><span>Practical</span><span>Scalable</span><span>Sustainable</span></li>
+    </ol>
+    <div class="vmap r" style="--d:2">
+      <svg class="tn big" id="tn-big" viewBox="-20 -20 600 680"></svg>
+      <p class="mapnote">Hollow circles: possible future villages, for illustration only</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · CLOSE -->
+<section class="slide photo" data-title="Thank you" style="background-image:url(assets/coast-boats.jpg)">
+  <div class="shade full"></div>
+  <div class="close">
+    <p class="kicker r">The ask</p>
+    <h1 class="r" style="--d:1">Let’s start <span class="volt">at Manapad.</span></h1>
+    <div class="close-stats">
+      <div class="r" style="--d:2"><b>3</b><span>fishing boats</span></div>
+      <div class="r" style="--d:3"><b>3</b><span>set-ups compared</span></div>
+      <div class="r" style="--d:4"><b>4</b><span>months to rollout</span></div>
+    </div>
+    <p class="thanks r" style="--d:5">Thank you · நன்றி</p>
+  </div>
+  <div class="brand r" style="--d:5"><img src="assets/simtestlab-logo.png" alt="">Simtestlab</div>
+  <p class="credits">Coast photos: Sriram Jagannathan (CC BY-SA 4.0), melanie-m/Flickr (CC BY 2.0), Edwin Singh (CC BY-SA 4.0), via Wikimedia Commons · Outboard photos: Yamaha Motor, Torqeedo, ePropulsion, Mercury dealer · Satellite imagery ©2026 Airbus, Maxar Technologies; Map data ©2026 Google</p>
+</section>
+
+</main>
+</div>
+
+<nav class="ctrl" id="ctrl">
+  <button id="prev" aria-label="Previous slide">‹</button>
+  <span id="count">1 / 14</span>
+  <button id="next" aria-label="Next slide">›</button>
+  <button id="fs" aria-label="Full screen" title="Full screen (F)">⛶</button>
+</nav>
+<div class="progress"><i id="bar"></i></div>
+
+<script src="scripts/site-geometry.js"></script>
+<script src="scripts/deck.js"></script>
+</body>
+</html>
