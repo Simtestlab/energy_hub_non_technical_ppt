@@ -16,6 +16,7 @@
   --volt: #0e8a5f;
   --volt2: #38cfa0;
   --sun: #f2b33d;
+  --coral: #ff7a6b;
   --f-disp: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
@@ -70,8 +71,6 @@ h3 { font: 700 34px/1 var(--f-disp); margin: 0; }
 .title-wrap .lede { font-size: 31px; max-width: 760px; }
 .tamil { margin: 34px 0 0; font: 500 30px var(--f-ta); color: var(--sun); }
 .tamil span { font-family: var(--f-body); font-size: 22px; color: rgba(255,255,255,.75); }
-.brand { position: absolute; right: 96px; top: 62px; display: flex; align-items: center; gap: 14px; font: 700 30px var(--f-disp); letter-spacing: .03em; color: #fff; }
-.brand img { width: 52px; height: 52px; border-radius: 12px; background: #fff; padding: 4px; }
 .photo-note { position: absolute; right: 96px; bottom: 34px; margin: 0; font-size: 14px; color: rgba(255,255,255,.6); }
 
 /* ---------- 2 · day at sea ---------- */
@@ -266,14 +265,8 @@ h3 { font: 700 34px/1 var(--f-disp); margin: 0; }
 .wcard li { position: relative; padding-left: 30px; font-size: 25px; line-height: 1.38; }
 .wcard li::before { content: ""; position: absolute; left: 0; top: 13px; width: 14px; height: 14px; border-radius: 50%; background: var(--c); opacity: .85; }
 
-/* ---------- 12 · gallery ---------- */
-.gallery { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 18px; margin-top: 36px; flex: 1; min-height: 0; }
-.gallery figure { position: relative; margin: 0; border-radius: 18px; overflow: hidden; background: var(--sand); }
-.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; font-size: 17px; color: #fff; background: linear-gradient(180deg, transparent, rgba(6,24,33,.85)); }
-
-/* ---------- 13 · vision ---------- */
-.vision { display: grid; grid-template-columns: 1fr 480px; gap: 60px; margin-top: 36px; flex: 1; min-height: 0; }
+/* ---------- 12 · vision ---------- */
+.vision { display: grid; grid-template-columns: 1fr 600px; gap: 40px; margin-top: 36px; flex: 1; min-height: 0; }
 .stairs { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; justify-content: center; }
 .stairs li { display: flex; gap: 26px; align-items: center; padding: 22px 28px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
 .stairs li:nth-child(2) { margin-left: 50px; } .stairs li:nth-child(3) { margin-left: 100px; }
@@ -282,7 +275,37 @@ h3 { font: 700 34px/1 var(--f-disp); margin: 0; }
 .stairs b { display: block; font: 800 40px/1 var(--f-disp); margin-bottom: 6px; }
 .stairs span { font-size: 21px; color: rgba(255,255,255,.8); }
 .vmap { position: relative; }
-#tn-big { width: 100%; height: 560px; }
+#india-map { width: 100%; height: 600px; margin-top: -40px; overflow: visible; }
+#india-map .land, #india-map .isle { fill: rgba(255,255,255,.07); stroke: rgba(255,255,255,.22); stroke-width: 1.5; stroke-linejoin: round; }
+#india-map .vz-b .coast { stroke-width: 2; opacity: .7; }
+#india-map .tn-hi { fill: rgba(242,179,61,.2); stroke: var(--sun); stroke-width: 1.5; stroke-linejoin: round; }
+#india-map .country-t { font: 800 54px var(--f-disp); letter-spacing: .3em; fill: rgba(255,255,255,.13); }
+#india-map .state-t { font: 700 15px var(--f-mono); letter-spacing: .1em; fill: var(--sun); }
+#india-map .vz-bt .city-t { font-size: 15px; }
+#india-map .vz-bt .pilot-t { font-size: 30px; }
+#india-map .vz-bt .future { stroke-width: 2.5; }
+#india-map .vz-a .net { stroke-width: 4; }
+#india-map .hub { fill: var(--deep); stroke: var(--coral); stroke-width: 2.5; opacity: 0; }
+.slide.on #india-map .hub { animation: fadein .5s ease both; animation-delay: var(--fd); }
+/* scene A: Tamil Nadu close-up, then it shrinks into its place on the India map */
+#india-map .vz-a { transform-origin: 0 0; transform: translate(11.4px, 8.8px) scale(.941); }
+.slide.on #india-map .vz-a { animation: tnjoin 1.6s cubic-bezier(.6,0,.3,1) var(--zt) forwards; }
+@keyframes tnjoin { 75% { opacity: 1; } to { transform: matrix(.1713, 0, 0, .1852, 149.85, 469); opacity: 0; } }
+#india-map .vz-b, #india-map .vz-bt { opacity: 0; }
+.slide.on #india-map .vz-b { animation: fadein 1.2s ease calc(var(--zt) + .3s) both; }
+.slide.on #india-map .vz-bt { animation: fadein .5s ease calc(var(--zt) + 1.05s) both; }
+.net { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.net-tn { stroke: var(--sun); stroke-linejoin: round; }
+.net-in { stroke: var(--coral); stroke-width: 3.5; stroke-linejoin: round; }
+.net-in.sea { opacity: .55; }
+.slide.on .net { animation: draw .5s ease-out forwards; animation-delay: var(--fd); }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.slide.on #india-map .done { stroke-dashoffset: 0; opacity: 1; animation: none; }
+.mapnote span { display: inline-flex; align-items: center; gap: 8px; margin-left: 18px; font-size: 16px; color: rgba(255,255,255,.8); }
+.mapnote span::before { content: ""; width: 14px; height: 14px; border-radius: 50%; box-sizing: border-box; }
+.mapnote .k-pilot::before { background: var(--volt2); }
+.mapnote .k-tn::before { border: 2.5px solid var(--sun); }
+.mapnote .k-in::before { border: 2.5px solid var(--coral); background: var(--deep); }
 .deep .tn .land { fill: rgba(255,255,255,.08); }
 .deep .tn .coast { stroke: var(--surf); }
 .deep .tn .city { fill: rgba(255,255,255,.6); } .deep .tn .city-t { fill: rgba(255,255,255,.6); }
@@ -293,14 +316,11 @@ h3 { font: 700 34px/1 var(--f-disp); margin: 0; }
 .pillars { display: flex; }
 .pillars span { padding: 10px 24px; border-radius: 99px; border: 2px solid var(--volt2); color: var(--volt2); font: 700 26px var(--f-disp); letter-spacing: .04em; }
 
-/* ---------- 14 · close ---------- */
+/* ---------- 13 · close ---------- */
 .close { position: relative; margin: auto 0; }
-.close h1 { font-size: 120px; }
-.close-stats { display: flex; gap: 70px; margin-top: 50px; }
-.close-stats b { display: block; font: 800 120px/1 var(--f-disp); color: var(--sun); }
-.close-stats span { font-size: 24px; color: rgba(255,255,255,.88); }
+.close h1 { font-size: 112px; line-height: 1.16; max-width: 1300px; }
+.close-sub { margin: 40px 0 0; font: 500 40px/1.3 var(--f-body); color: rgba(255,255,255,.9); }
 .thanks { margin: 46px 0 0; font: 700 40px var(--f-disp); }
-.credits { position: absolute; left: 96px; right: 96px; bottom: 26px; margin: 0; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,.6); }
 
 /* ---------- controls ---------- */
 .ctrl { position: fixed; right: 18px; bottom: 16px; z-index: 10; display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 99px; background: rgba(6,24,33,.72); color: #fff; font: 500 14px var(--f-mono); transition: opacity .4s; backdrop-filter: blur(6px); }

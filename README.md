@@ -1,6 +1,6 @@
 # Manapad Energy Hub: non-technical presentation
 
-A 14-slide animated HTML deck for mixed audiences (fishermen, officials, funders). It combines the vision from `../energy-hub-proposal` (solar + battery hub at Manapad) with the plain-language findings of `../energy-hub-technical-presentation` (electric outboard retrofit), and sets out the three-boat pilot, the four-month timeline and the benefits for each stakeholder.
+A 13-slide animated HTML deck for mixed audiences (fishermen, officials, funders). It combines the vision from `../energy-hub-proposal` (solar + battery hub at Manapad) with the plain-language findings of `../energy-hub-technical-presentation` (electric outboard retrofit), and sets out the three-boat pilot and the four-month timeline.
 
 ## Run it
 
@@ -18,7 +18,7 @@ Deep link: `index.html#s6` opens slide 6.
 
 ## Slides
 
-1 Title · 2 A fisherman's day · 3 The problem · 4 The idea (kerosene → electric) · 5 How it works (capture, store, charge, sail) · 6 Manapad site concept · 7 Three boats, three set-ups · 8 Feedback loop · 9 Four-month timeline · 10 Per-trip cost and CO₂ · 11 Who benefits · 12 Field visits · 13 Long-term vision · 14 Close
+1 Title · 2 A fisherman's day · 3 The problem · 4 The idea (kerosene → electric) · 5 How it works (capture, store, charge, sail) · 6 Manapad site concept · 7 Three boats, three set-ups · 8 Feedback loop · 9 Four-month timeline · 10 Per-trip cost and CO₂ · 11 Who benefits · 12 Long-term vision · 13 Close
 
 ## Folder
 
