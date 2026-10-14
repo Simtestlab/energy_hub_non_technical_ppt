@@ -38,7 +38,7 @@
     count.textContent = n + 1 + " / " + slides.length;
     bar.style.width = ((n + 1) / slides.length) * 100 + "%";
     history.replaceState(null, "", "#s" + (n + 1));
-    document.title = "Manapad Energy Hub · " + slides[n].dataset.title;
+    document.title = "Thoothukudi Energy Hub · " + slides[n].dataset.title;
   }
   const next = () => go(cur + 1);
   const prev = () => go(cur - 1);
@@ -104,14 +104,14 @@
   function drawTN(svg) {
     el("path", { d: d(coast.concat(inland), true), class: "land" }, svg);
     el("path", { d: d(coast), class: "coast" }, svg);
-    const [mx, my] = P([78.06, 8.38]);
+    const [mx, my] = P([78.15, 8.79]);
     el("circle", { cx: mx, cy: my, r: 12, class: "pulse" }, svg);
     el("circle", { cx: mx, cy: my, r: 11, class: "pilot" }, svg);
-    el("text", { x: mx - 22, y: my + 12, class: "pilot-t", "text-anchor": "end", text: "Manapad", style: "font-size:56px" }, svg);
+    el("text", { x: mx - 22, y: my + 12, class: "pilot-t", "text-anchor": "end", text: "Thoothukudi", style: "font-size:40px" }, svg);
   }
   drawTN(document.getElementById("tn-small"));
 
-  /* ---------- vision: Manapad -> Tamil Nadu, then Tamil Nadu joins India (schematic, not to scale) ----------
+  /* ---------- vision: Thoothukudi -> Tamil Nadu, then Tamil Nadu joins India (schematic, not to scale) ----------
      Scene A is the Tamil Nadu close-up (P coords). It shrinks into Tamil Nadu's place on the
      India map (Q coords), which fades in underneath, then the network spreads across India. */
   const Q = ([lon, lat]) => [(lon - 68) * 18.5, (37.2 - lat) * 20];
@@ -134,8 +134,8 @@
     // between them (illustrative sites, none identified). Only the island links cross the sea.
     const shore = east.concat(coast, west);
     const at = (pt) => shore.findIndex((q) => q[0] === pt[0] && q[1] === pt[1]);
-    const man = coast[23], chennai = coast[1];
-    // Tamil Nadu coastal villages, Manapad -> Chennai
+    const man = coast[22], chennai = coast[1];
+    // Tamil Nadu coastal villages, Thoothukudi -> Chennai
     const tn = [man, coast[19], coast[13], coast[10], coast[7], coast[4], coast[2], chennai];
     // fishing hubs up the west coast (Kochi ... Gujarat) and the east coast (... West Bengal)
     const westHubs = [man, [76.2, 10.0], [74.9, 12.8], [73.9, 15.3], [72.85, 18.9], [70.4, 20.9]];
@@ -152,7 +152,7 @@
       const [mx, my] = proj(man);
       el("circle", { cx: mx, cy: my, r: r, class: "pulse" }, g);
       el("circle", { cx: mx, cy: my, r: r, class: "pilot" }, g);
-      el("text", { x: mx + lx, y: my + ly, class: "pilot-t", "text-anchor": "end", text: "Manapad" }, g);
+      el("text", { x: mx + lx, y: my + ly, class: "pilot-t", "text-anchor": "end", text: "Thoothukudi" }, g);
     };
 
     // India (fades in as Tamil Nadu shrinks into place)
@@ -196,7 +196,7 @@
     const A = el("g", { class: "vz-a" }, svg);
     el("path", { d: d(coast.concat(inland), true), class: "land" }, A);
     el("path", { d: d(coast), class: "coast" }, A);
-    [[80.27, 13.08, "Chennai", 14], [78.13, 8.79, "Thoothukudi", 14]].forEach(([lon, lat, t, dx]) => {
+    [[80.27, 13.08, "Chennai", 14]].forEach(([lon, lat, t, dx]) => {
       const [x, y] = P([lon, lat]);
       el("circle", { cx: x, cy: y, r: 5, class: "city" }, A);
       el("text", { x: x + dx, y: y + 7, class: "city-t", text: t }, A);
